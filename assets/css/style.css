@@ -1,0 +1,45 @@
+body {
+  	background: url("../img/grey.png"); 
+  	line-height: 2;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	font-size: 18px;
+	padding: 0;
+	margin: 0;
+}
+
+.well {
+	border-bottom: 5px solid black;
+
+}
+
+.panel-heading {
+	padding-left: 40px;
+}
+
+h3 {
+	text-align: center;
+}
+
+img {
+	margin-left: 150px;
+}
+
+/*MEDIA QUERIES=========================*/
+
+@media screen and (max-width:1200px) {
+	img {
+		margin-left: 100px;
+	}
+}
+
+@media screen and (max-width:993px) {
+	img {
+		margin-left: 55px;
+	}
+}
