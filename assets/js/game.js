@@ -1,8 +1,10 @@
+$(function() {
+
 var win = 0;
   var lose = 0;
   var counter = 0;
   var targetNumber;
-  
+
 
   var resetAndStart = function () {
 
@@ -68,5 +70,5 @@ $(document).on('click', ".crystal", function () {
 
       resetAndStart ();
     }
-
+  });
 });
