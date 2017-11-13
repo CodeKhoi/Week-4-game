@@ -3,9 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 	<link rel="shortcut icon" type="image/png" href="../assets/img/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:700" rel="stylesheet">
 	<title>Week-4-Game</title>
 </head>
 <body>
@@ -15,87 +17,168 @@
 </header>
 
 <div class="container">
-	<div class="panel panel-danger">
- 		<div class="panel-heading">
-   			<div class="panel-title"><h2>GAME RULES</h2></div>
-  		</div>
-  		<div class="panel-body">
-    		<ol>
-    			<li>You will be given a random number at the start of the game.</li>
-    			<li>There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score.</li>
-    			<li>You win the game by matching your total score to the random number, You lose the game if your total score goes above the random number.</li>
-    			<li>The value of each crystal is hidden from you until you click on it.</li>
-    			<li>Each time when the game starts, the game will change the values of each crystal.</li>
-    		</ol>
-  		</div>
-	</div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title"><h2>GAME RULES</h2></div>
+      </div>
+      <div class="panel-body">
+        <ol>
+          <li>You will be given a random number at the start of the game.</li>
+          <li>There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score.</li>
+          <li>You win the game by matching your total score to the random number, You lose the game if your total score goes above the random number.</li>
+          <li>The value of each crystal is hidden from you until you click on it.</li>
+          <li>Each time when the game starts, the game will change the values of each crystal.</li>
+        </ol>
+      </div>
+  </div>
 </div>
 
 <!-- Random number -->
 <div class="container">
-	<div class="row">
-	<!-- Wins -->
-		<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-    		<div class="panel panel-default">
-    			<div class="panel-heading">
-  					<h3 class="panel-title">WINS:</h3>
-				</div> <!-- heading -->
-				<div class="panel-body">
-					<h3 id="lives">0</h3>
-      			</div> <!-- panel-body -->
-			</div> <!-- panel -->
-    	</div> <!-- col -->
-    	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-      		<div class="panel panel-default">
-      			<div class="panel-heading">
-  					<h3 class="panel-title">RANDOM NUMBER:</h3>
-				</div> <!-- heading -->
-				<div class="panel-body">
-					<h3 id="winCounter">0</h3>
-      			</div> <!-- panel-body -->
-      		</div> <!-- panel -->
-   		</div> <!-- col -->
-
-<!-- Total score -->
-   		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-      		<div class="panel panel-default">
-      			<div class="panel-heading">
-  					<h3 class="panel-title">YOUR TOTAL SCORE IS:</h3>
-				</div> <!-- heading -->
-				<div class="panel-body">
-					<h3 id="lossCounter">0</h3>
-      			</div> <!-- panel-body -->
-      		</div> <!-- panel -->
-    	</div> <!-- col -->
-
-	<!-- Losses -->
+  <div class="row">
+  <!-- Wins -->
     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-    	<div class="panel panel-default">
-    		<div class="panel-heading">
-  				<h3 class="panel-title">LOSSES:</h3>
-			</div> <!-- heading -->
-			<div class="panel-body">
-				<h3 id="lives">0</h3>
-      		</div> <!-- panel-body -->
-		</div> <!-- panel -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">WINS:</h3>
+        </div> <!-- heading -->
+        <div class="panel-body">
+          <h3 id="wins">0</h3>
+        </div> <!-- panel-body -->
+      </div> <!-- panel -->
+    </div> <!-- col -->
+
+    <!-- Total score -->
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">TOTAL SCORE:</h3>
+        </div> <!-- heading -->
+        <div class="panel-body">
+          <h3 id="score"></h3>
+        </div> <!-- panel-body -->
+      </div> <!-- panel -->
+    </div> <!-- col -->
+
+      <!-- Random number -->
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">RANDOM NUMBER:</h3>
+        </div> <!-- heading -->
+        <div class="panel-body">
+          <h3 id="randomNumber"></h3>
+        </div> <!-- panel-body -->
+      </div> <!-- panel -->
+    </div> <!-- col -->
+
+  <!-- Losses -->
+    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">LOSSES:</h3>
+       </div> <!-- heading -->
+       <div class="panel-body">
+          <h3 id="losses">0</h3>
+        </div> <!-- panel-body -->
+      </div> <!-- panel -->
     </div> <!-- col -->
   </div> <!-- row -->
 </div> <!-- container -->
-	
-	<!-- Crystals -->	
+  
+  <!-- Crystals --> 
 <div class="container">
-	<div class="panel panel-success">
-    	<div class="panel-heading">
-  			<h3 class="panel-title">Click the crystals to match the random number</h3>
-		</div> <!-- heading -->
-		<div class="panel-body">
-			<img src="../assets/img/gem1.jpg">
-			<img src="../assets/img/gem2.jpg">
-			<img src="../assets/img/gem3.jpg">
-			<img src="../assets/img/gem4.jpg">
-     	</div> <!-- panel-body -->
-	</div> <!-- panel -->
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Click the crystals to match the random number</h3>
+    </div> <!-- heading -->
+    <div class="panel-body">
+      <div class="crystals">
+      </div>
+      </div> <!-- panel-body -->
+  </div> <!-- panel -->
 </div> <!-- container -->
+
+<script src="../assets/js/game.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+  var win = 0;
+  var lose = 0;
+  var counter = 0;
+  var targetNumber;
+  
+
+  var resetAndStart = function () {
+
+    $(".crystals").empty();
+
+    var images = [
+          '../assets/img/gem1.jpg',
+          '../assets/img/gem2.jpg',
+          '../assets/img/gem3.jpg',
+          '../assets/img/gem4.jpg',];
+
+    targetNumber = Math.floor(Math.random() * 101 ) + 19;
+
+    $("#randomNumber").html('' + targetNumber);
+
+    for (var i = 0; i < 4; i++) {
+
+      var random = Math.floor(Math.random() * 11 ) + 1;
+
+      var crystal = $("<div>");
+          crystal.attr({
+            "class": 'crystal',
+            "data-random": random,
+          });
+          crystal.css({
+            "background-image":"url('" + images[i] + "')",
+          })
+
+      $(".crystals").append(crystal);
+    }
+
+    $("#score").html('' + counter);
+
+  }
+
+resetAndStart ();
+
+$(document).on('click', ".crystal", function () {
+      
+    var crystalValue = parseInt($(this).attr('data-random'));
+
+    counter += crystalValue;
+
+    $("#score").html('' + counter);
+
+    if (counter === targetNumber) {
+      
+      win++;
+
+      $("#wins").html('' + win);
+
+      counter = 0;
+
+      resetAndStart ();
+    }
+    else if (counter > targetNumber) {
+      
+      lose++;
+
+      $("#losses").html('' + lose);
+
+      counter = 0;
+
+      resetAndStart ();
+    }
+
+});
+
+</script>
 
 </body>
 </html>
